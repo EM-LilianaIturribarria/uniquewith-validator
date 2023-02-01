@@ -6,7 +6,7 @@ This package contains a variant of the `validateUnique` rule for Laravel, that a
 
 ## Documentation for older versions
 
- - [Laravel 4](https://github.com/felixkiss/uniquewith-validator/blob/2.0.8/README.md#laravel-4)
+- [Laravel 4](https://github.com/felixkiss/uniquewith-validator/blob/2.0.8/README.md#laravel-4)
 
 ## Installation
 
@@ -14,7 +14,7 @@ Install the package through [Composer](http://getcomposer.org).
 On the command line:
 
 ```
-composer require felixkiss/uniquewith-validator
+composer require em-liturribarria/uniquewith-validator
 ```
 
 ## Configuration
@@ -47,6 +47,7 @@ If your input field names are different from the corresponding database columns,
 you can specify the column names explicitly.
 
 e.g. your input contains a field 'last_name', but the column in your database is called 'sur_name':
+
 ```php
 $rules = [
     'first_name' => 'unique_with:users, middle_name, last_name = sur_name',
@@ -96,7 +97,7 @@ $rules = [
 ];
 ```
 
-*Soft delete caveat:*
+_Soft delete caveat:_
 
 In Laravel 5 (tested on 5.5), if the validation is performed in form request class, field deleted_at is skipped, because it's not send in request. To solve this problem, add 'deleted_at' => null to Your validation parameters in request class., e.g.:
 
